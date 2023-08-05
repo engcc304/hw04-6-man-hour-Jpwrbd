@@ -1,7 +1,6 @@
 /*
     เขียนโปรแกรมภาษาซีเพื่อรับข้อมูลพนักงานของบริษัทซอร์ฟแวร์ โดยรับข้อมูล รหัสประจำตัวพนักงาน , จำนวนชั่วโมงที่ทำงาน , รายได้ต่อชั่วโมง จากนั้นให้แสดงข้อมูลเลขประจำตัวพนักงาน พร้อมกับรายได้ทั้งหมดที่หนักงานจะได้รับทั้งหมด
     (ผลลัพธ์ของ Salary จะต้องอยู่ในรูปแบบ Decimal Number เท่านั้น เช่น 374,000)
-
     Test case:
         Input the Employees ID(Max. 10 chars): 
             0342
@@ -13,7 +12,6 @@
         Expected Output:
         Employees ID = 0342
         Salary = U$ 120,000.00
-
     Test case:
         Input the Employees ID(Max. 10 chars): 
             0000500349
@@ -39,6 +37,7 @@ int main() {
     char id[10];
     float timework;
     float money;
+    printf("Test case: \n");
     printf("Input the Employees ID (Max. 10 chars):\n");
     scanf("%s", &id);
     printf("Input the working hrs:\n");
@@ -48,9 +47,10 @@ int main() {
     float sum;
     sum = timework * money;
     printf("Output: \n");
-    printf("Expected Output: \n Employees ID = %s\n", id);
+    printf("Expected Output:\nEmployees ID = %s\n", id);
     printf("Salary = U$ ");
     commaprint((int)sum);
     printf(".%02d", (int)(sum * 100) % 100);
+
     return 0;
 }
